@@ -39,14 +39,6 @@ Without bells and whistles, ProRes achieves competitive performance compared to 
 <!-- [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/yolop-you-only-look-once-for-panoptic-driving/traffic-object-detection-on-bdd100k)](https://paperswithcode.com/sota/traffic-object-detection-on-bdd100k?p=yolop-you-only-look-once-for-panoptic-driving) -->
 
 #### Performance on Image Restorations Tasks
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-</style>
 <table class="tg">
 <thead>
   <tr>
@@ -167,15 +159,7 @@ Without bells and whistles, ProRes achieves competitive performance compared to 
 
 #### ProRes and the vanilla task-specific models:
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:center;vertical-align:top}
-</style>
+
 <table class="tg">
 <thead>
   <tr>
@@ -207,7 +191,7 @@ Without bells and whistles, ProRes achieves competitive performance compared to 
     <td class="tg-c3ow" colspan="9">Task-specific models</td>
   </tr>
   <tr>
-    <th class="tg-nrix" rowspan="4">Prompt</th>
+    <th class="tg-nrix" rowspan="4">ViT-Large</th>
     <td class="tg-c3ow"><span style="font-weight:normal;font-style:normal">39.74</span></td>
     <td class="tg-c3ow"><span style="font-weight:normal;font-style:normal">0.969</span></td>
     <td class="tg-0pky">-</td>
@@ -278,16 +262,7 @@ Without bells and whistles, ProRes achieves competitive performance compared to 
 ---
 
 #### Different training strategies for ProRes with degradation-aware visual prompts:
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-baqh{border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-nrix{border-color:inherit;text-align:center;vertical-align:middle}
-</style>
+
 <table class="tg">
 <thead>
   <tr>
@@ -372,14 +347,7 @@ Without bells and whistles, ProRes achieves competitive performance compared to 
 
 
 #### Prompt tuning on the FiveK and RESIDE-6K datasets:
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
-</style>
+
 <table class="tg">
 <thead>
   <tr>
