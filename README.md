@@ -7,7 +7,7 @@
 [Guoli Wang](https://scholar.google.com/citations?user=z-25fk0AAAAJ&hl=zh-CN)<sup>3</sup>
 [Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=zh-CN)<sup>2</sup>, 
 [Qian Zhang](https://scholar.google.com/citations?user=pCY-bikAAAAJ&hl=zh-CN)<sup>3</sup>,
-[Lefei Zhang](https://cs.whu.edu.cn/info/1019/2889.htm)<sup>2,📧</sup>
+[Lefei Zhang](https://cs.whu.edu.cn/info/1019/2889.htm)<sup>1,📧</sup>
 
 <sup>1</sup>School of Computer Science, Wuhan University\
 <sup>2</sup> School of EIC, Huazhong University of Science & Technology\
