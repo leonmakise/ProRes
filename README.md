@@ -43,7 +43,7 @@
 ## Updates
 This project is under active development, please stay tuned! ☕
 
-**June 26, 2023:** We've released the [arXiv paper]() of ProRes! Code & models are comming soon!
+**June 26, 2023:** We've released the [arXiv paper]() of ProRes! Code & models are coming soon!
 
 ## Introduction
 
@@ -451,8 +451,10 @@ Visualization results of ProRes on the FiveK dataset. We adopt two settings, i.e
 Visualization results of ProRes on the RESIDE-6K dataset via prompt tuning for image dehazing (a new task).
 ![](figures/tuning_reside.jpg)
 
+## Getting Started
+
 ### Project Structure
-Under construction.
+coming soon!
 <!-- 
 ```python
 ├─inference
@@ -505,7 +507,7 @@ Under construction.
     pip install -r requirements.txt
     ```
 
-### Data preparation
+### Data Preparation
 #### Download Path
 - Download the denoising dataset from [SIDD](https://www.eecs.yorku.ca/~kamel/sidd/).
 - Download the low-light enhancement dataset from [LoL](https://daooshee.github.io/BMVC2018website/). 
@@ -513,7 +515,7 @@ Under construction.
 - Download the deblurring dataset from [Synthetic Blur Datasets](https://github.com/swz30/MPRNet/blob/main/Deblurring/Datasets/README.md). 
 
 #### Preprocess Data
-Run the following commands to generate corresponding json files for each dataset.
+Run the following commands to generate corresponding JSON files for each dataset.
 
 ```bash
 #denoising
@@ -579,11 +581,11 @@ $ProRes/datasets/
 ```
 
 ### Training
-comming soon!
+coming soon!
 <!-- 
-You can set the training configuration in the `./lib/config/default.py`. (Including:  the loading of preliminary model,  loss,  data augmentation, optimizer, warm-up and cosine annealing, auto-anchor, training epochs, batch_size).
+You can set the training configuration in the `./lib/config/default.py`. (Including the loading of the preliminary model,  loss,  data augmentation, optimizer, warm-up and cosine annealing, auto-anchor, training epochs, batch_size).
 
-If you want try alternating optimization or train model for single task, please modify the corresponding configuration in `./lib/config/default.py` to `True`. (As following, all configurations is `False`, which means training multiple tasks end to end).
+If you want to try alternating optimization or train the model for a single task, please modify the corresponding configuration in `./lib/config/default.py` to `True`. (As follows, all configurations are `False`, which means training multiple tasks end to end).
 
 ```python
 ```
@@ -600,7 +602,7 @@ python -m torch.distributed.launch --nproc_per_node=N tools/train.py  # N: the n
 
 
 ### Evaluation
-comming soon!
+coming soon!
 <!-- You can set the evaluation configuration in the `./lib/config/default.py`.
 
 Start evaluating:
@@ -616,7 +618,7 @@ If you find our paper and code useful for your research, please consider giving 
 
 ```BibTeX
 @article{
-      title={ProRes:Exploring Degradation-aware Visual Prompt for Universal Image Restoration}, 
+      title={ProRes: Exploring Degradation-aware Visual Prompt for Universal Image Restoration}, 
       author={Jiaqi Ma and Tianheng Cheng and Guoli Wang and Xinggang Wang and Qian Zhang and Lefei Zhang},
       journal={arXiv preprint arXiv:2306.xxxxx},
       year={2023}
@@ -624,4 +626,4 @@ If you find our paper and code useful for your research, please consider giving 
 ```
 
 ## Acknowledgement
-This project is based on [MAE](https://github.com/facebookresearch/mae), [BEiT](https://github.com/microsoft/unilm/tree/master/beit), [MIRNet](https://github.com/swz30/MIRNet), [MPRNet](https://github.com/swz30/MPRNet), [Uformer](https://github.com/ZhendongWang6/Uformer) and [Painter](https://github.com/baaivision/Painter/tree/main/Painter). Thanks for their wonderful works!
+This project is based on [MAE](https://github.com/facebookresearch/mae), [BEiT](https://github.com/microsoft/unilm/tree/master/beit), [MIRNet](https://github.com/swz30/MIRNet), [MPRNet](https://github.com/swz30/MPRNet), [Uformer](https://github.com/ZhendongWang6/Uformer) and [Painter](https://github.com/baaivision/Painter/tree/main/Painter). Thanks for their wonderful work!
