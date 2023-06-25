@@ -2,8 +2,8 @@
 <h1> ProRes 🌆</h1>
 <h3> Exploring Degradation-aware Visual <strong>Pro</strong>mpt for Universal Image <strong>Res</strong>toration </h3>
 
-[Jiaqi Ma](https://scholar.google.com/citations?user=BJUlpoMAAAAJ)<sup>1,*</sup>,
-[Tianheng Cheng](https://scholar.google.com/citations?user=PH8rJHYAAAAJ)<sup>2,*</sup>
+[Jiaqi Ma](https://scholar.google.com/citations?user=BJUlpoMAAAAJ)<sup>1,\*</sup>,
+[Tianheng Cheng](https://scholar.google.com/citations?user=PH8rJHYAAAAJ)<sup>2,\*</sup>
 [Guoli Wang](https://scholar.google.com/citations?user=z-25fk0AAAAJ&hl=zh-CN)<sup>3</sup>
 [Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=zh-CN)<sup>2</sup>, 
 [Qian Zhang](https://scholar.google.com/citations?user=pCY-bikAAAAJ&hl=zh-CN)<sup>3</sup>,
