@@ -1,4 +1,29 @@
-<div align="left">   
+<div align="center">
+<h1> ProRes 🌆</h1>
+<h3> Exploring Degradation-aware Visual <strong>Pro</strong>mpt for Universal Image <strong>Res</strong>toration </h3>
+
+[Jiaqi Ma](https://scholar.google.com/citations?user=BJUlpoMAAAAJ)<sup>1,*</sup>,
+[Tianheng Cheng](https://scholar.google.com/citations?user=PH8rJHYAAAAJ)<sup>2,*</sup>
+[Guoli Wang](https://scholar.google.com/citations?user=z-25fk0AAAAJ&hl=zh-CN)<sup>3</sup>
+[Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=zh-CN)<sup>2</sup>, 
+[Qian Zhang](https://scholar.google.com/citations?user=pCY-bikAAAAJ&hl=zh-CN)<sup>3</sup>,
+[Lefei Zhang](https://cs.whu.edu.cn/info/1019/2889.htm)<sup>2,📧</sup>
+
+<sup>1</sup>School of Computer Science, Wuhan University\
+<sup>2</sup> School of EIC, Huazhong University of Science & Technology\
+<sup>3</sup> Horizon Robotics
+
+(<sup>*</sup>) Equal contribution.
+(<sup>📧</sup>) corresponding author.
+
+[![arXiv paper](https://img.shields.io/badge/arXiv-2306.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2306.xxxxx)
+
+</div>
+
+
+
+
+<!-- <div align="left">   
 
 ## ProRes: Exploring Degradation-aware Visual **Pro**mpt for Universal Image **Res**toration 
 (This page is under construction.)
@@ -10,32 +35,38 @@
 >
 >*The latest arXiv version ([ProRes](https://arxiv.org/abs/))*
 ---
-<!-- [中文文档](https://github.com/leonmakise/ProRes/README_CH.md) -->
+[中文文档](https://github.com/leonmakise/ProRes/README_CH.md) -->
 
-### The Illustration of ProRes
-![](figures/intro_figure.jpg)
+<!-- ### The Illustration of ProRes
+![](figures/intro_figure.jpg) -->
+
+## Updates
+This project is under active development, please stay tuned! ☕
+
+**June 26, 2023:** We've released the [arXiv paper]() of ProRes! Code & models are comming soon!
+
+## Introduction
+
+![](figures/main_figure.jpg)
 
 Image restoration aims to reconstruct degraded images, e.g., denoising or deblurring. Existing works focus on designing task-specific methods and there are inadequate attempts at universal methods.
 However, simply unifying multiple tasks into one universal architecture suffers from uncontrollable and undesired predictions. To address those issues, we explore prompt learning in universal architectures for image restoration tasks.
 
-In this paper, we present **Degradation-aware Visual Prompts**, which encode various types of image degradation, e.g., noise and blur, into unified visual prompts. These degradation-aware prompts provide control over image processing and allow weighted combinations for customized image restoration. We then leverage degradation-aware visual **Pro**mpts to establish a controllable and universal model for image **Res**toration, called **ProRes**, which is applicable to an extensive range of image restoration tasks. ProRes leverages the vanilla Vision Transformer (ViT) without any task-specific designs. Furthermore, the pre-trained ProRes can easily adapt to new tasks through efficient prompt tuning with only a few images.
-
-Without bells and whistles, ProRes achieves competitive performance compared to task-specific methods and experiments can demonstrate its ability for controllable restoration and adaptation for new tasks.
-
-![](figures/main_figure.jpg)
+In this paper, we present **Degradation-aware Visual Prompts**, which encode various types of image degradation, e.g., noise and blur, into unified visual prompts. These degradation-aware prompts provide control over image processing and allow weighted combinations for customized image restoration. We then leverage degradation-aware visual **Pro**mpts to establish a controllable and universal model for image **Res**toration, called **ProRes**, which is applicable to an extensive range of image restoration tasks. ProRes leverages the vanilla Vision Transformer (ViT) without any task-specific designs. Furthermore, the pre-trained ProRes can easily adapt to new tasks through efficient prompt tuning with only a few images. Without bells and whistles, ProRes achieves competitive performance compared to task-specific methods and experiments can demonstrate its ability for controllable restoration and adaptation for new tasks.
 
 
-### Contributions
+### Highlights
 
-* We present degradation-aware visual prompts for universal image restoration which provide control over image processing given any degraded image.
+* ProRes addresses universal image restoration with degradation-aware prompts, which is the first prompt-based versatile framework for image restoration.
 
-* We propose ProRes to address universal image restoration with degradation-aware prompts, which is the first prompt-based versatile framework for image restoration.
+* ProRes demonstrate two superior capabilities: (1) control ability for desired outputs and (2) transferability based on prompt tuning.
 
-* We additionally propose the effective and efficient prompt tuning with ProRes to adapt for new tasks or new datasets without fine-tuning ProRes.
+* ProRes can be easily adapted for new tasks or new datasets through effective and efficient prompt tuning.
 
-* The proposed ProRes obtains competitive results compared to task-specific methods on various benchmarks. We hope the simple  yet effective ProRes can serve as a solid baseline for universal image restoration and facilitate future research.
+* Specific prompts can control the output of ProRes. Moreover, combining different prompts can tackle the images with multiple corruptions.
 
-### Evaluation Results
+
+## Experimental Results
 <!-- [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/yolop-you-only-look-once-for-panoptic-driving/traffic-object-detection-on-bdd100k)](https://paperswithcode.com/sota/traffic-object-detection-on-bdd100k?p=yolop-you-only-look-once-for-panoptic-driving) -->
 
 #### Performance on Image Restorations Tasks
@@ -43,16 +74,16 @@ Without bells and whistles, ProRes achieves competitive performance compared to 
 <thead>
   <tr>
     <th class="tg-c3ow" rowspan="3"></th>
-    <th class="tg-c3ow" colspan="2">denoising</th>
-    <th class="tg-c3ow" colspan="2">deraining</th>
-    <th class="tg-c3ow" colspan="2">enhance</th>
-    <th class="tg-c3ow" colspan="2">deblurring</th>
+    <th class="tg-c3ow" colspan="2" align="center">denoising</th>
+    <th class="tg-c3ow" colspan="2" align="center">deraining</th>
+    <th class="tg-c3ow" colspan="2" align="center">enhance</th>
+    <th class="tg-c3ow" colspan="2" align="center">deblurring</th>
   </tr>
   <tr>
-    <th class="tg-c3ow" colspan="2">SIDD</th>
-    <th class="tg-c3ow" colspan="2">5 datasets</th>
-    <th class="tg-c3ow" colspan="2">LoL</th>
-    <th class="tg-c3ow" colspan="2">4 datasets</th>
+    <th class="tg-c3ow" colspan="2" align="center">SIDD</th>
+    <th class="tg-c3ow" colspan="2" align="center">5 datasets</th>
+    <th class="tg-c3ow" colspan="2" align="center">LoL</th>
+    <th class="tg-c3ow" colspan="2" align="center">4 datasets</th>
   </tr>
   <tr>
     <th class="tg-c3ow">PSNR</th>
@@ -67,7 +98,7 @@ Without bells and whistles, ProRes achieves competitive performance compared to 
 </thead>
 <tbody>
   <tr>
-    <td class="tg-c3ow" colspan="9">Task-specific models</td>
+    <td class="tg-c3ow" colspan="9" align="center">Task-specific models</td>
   </tr>
   <tr>
     <td class="tg-c3ow">Uformer</td>
@@ -125,7 +156,7 @@ Without bells and whistles, ProRes achieves competitive performance compared to 
     <td class="tg-c3ow">0.954</td>
   </tr>
   <tr>
-    <td class="tg-c3ow" colspan="9">Universal models</td>
+    <td class="tg-c3ow" colspan="9" align="center">Universal models</td>
   </tr>
   <tr>
     <td class="tg-c3ow">Painter</td>
@@ -137,6 +168,17 @@ Without bells and whistles, ProRes achieves competitive performance compared to 
     <td class="tg-c3ow">0.872</td>
     <td class="tg-c3ow">-</td>
     <td class="tg-c3ow">-</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">ViT-Large</td>
+    <td class="tg-c3ow">39.28</td>
+    <td class="tg-c3ow">0.967</td>
+    <td class="tg-c3ow">30.75</td>
+    <td class="tg-c3ow">0.893</td>
+    <td class="tg-c3ow">21.69</td>
+    <td class="tg-c3ow">0.850</td>
+    <td class="tg-c3ow">20.57</td>
+    <td class="tg-c3ow">0.680</td>
   </tr>
   <tr>
     <td class="tg-c3ow">ProRes</td>
@@ -154,10 +196,11 @@ Without bells and whistles, ProRes achieves competitive performance compared to 
 
 **Notes**: 
 - The works we has use for reference including `Uformer`([paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Wang_Uformer_A_General_U-Shaped_Transformer_for_Image_Restoration_CVPR_2022_paper.pdf),[code](https://github.com/ZhendongWang6/Uformer)), `MPRNet`([paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Zamir_Multi-Stage_Progressive_Image_Restoration_CVPR_2021_paper.pdf),[code](https://github.com/swz30/MPRNet)), `MIRNet-v2`([paper](https://www.waqaszamir.com/publication/zamir-2022-mirnetv2/),[code](https://github.com/swz30/MIRNetv2)), `Restormer`([paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Zamir_Restormer_Efficient_Transformer_for_High-Resolution_Image_Restoration_CVPR_2022_paper.pdf),[code](https://github.com/swz30/Restormer)), `MAXIM`([paper](https://openaccess.thecvf.com//content/CVPR2022/papers/Tu_MAXIM_Multi-Axis_MLP_for_Image_Processing_CVPR_2022_paper.pdf),[code](https://github.com/google-research/maxim)) and `Painter`([paper](https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Images_Speak_in_Images_A_Generalist_Painter_for_In-Context_Visual_CVPR_2023_paper.pdf),[code](https://github.com/baaivision/Painter)).
-- For both Painter and our ProRes, we use ViT-Large with MAE pre-trained weights.
+- For both Painter and ProRes, we adopt ViT-Large with MAE pre-trained weights.
+- More experimental results are listed in the paper!
 ---
 
-#### ProRes and the vanilla task-specific models:
+<!-- #### ProRes and the vanilla task-specific models:
 
 
 <table class="tg">
@@ -259,8 +302,8 @@ Without bells and whistles, ProRes achieves competitive performance compared to 
 </tbody>
 </table>
 
----
-
+--- -->
+<!-- 
 #### Different training strategies for ProRes with degradation-aware visual prompts:
 
 <table class="tg">
@@ -343,10 +386,10 @@ Without bells and whistles, ProRes achieves competitive performance compared to 
 </tbody>
 </table>
   
----
+--- -->
 
 
-#### Prompt tuning on the FiveK and RESIDE-6K datasets:
+<!-- #### Prompt tuning on the FiveK and RESIDE-6K datasets:
 
 <table class="tg">
 <thead>
@@ -382,29 +425,29 @@ Without bells and whistles, ProRes achieves competitive performance compared to 
     <td class="tg-9wq8">0.840</td>
   </tr>
 </tbody>
-</table>
+</table> -->
 
----
+## Visualizations
 
 ### Control Ability
-#### Independent Control
+#### 1.Independent Control
 Visualization results processed from images of different corruptions. Compared with the original inputs, the outputs are consistent with the given visual prompts.
 ![](figures/S1_independent.jpg)
 
-#### Sensitive to Irrelevant Task-specific Prompts
+#### 2. Sensitive to Irrelevant Task-specific Prompts
 Visualization results processed by different prompts. Compared with the original inputs, the outputs remain unchanged with irrelevant visual prompts.
 ![](figures/S2_irrelevant.jpg)
 
-#### Tackle Complicated Corruptions
+#### 3. Tackle Complicated Corruptions
 Visualization results processed by ProRes from images of mixed types of degradation, i.e., low-light and rainy. ProRes adopts two visual prompts for low-light enhancement (E) and deraining (D) and combines the two visual prompts by linear weighted sum, i.e., αD + (1 − α)E, to control the restoration process.
 ![](figures/S3_combine.jpg)
 
 
-### Visualization
-#### Low-light Enhancement Results
+### Adaptation on New Datasets & Task
+#### 1. Low-light Enhancement Results
 Visualization results of ProRes on the FiveK dataset. We adopt two settings, i.e., direct inference and prompt tuning, to evaluate ProRes on the FiveK dataset (a new dataset for low-light enhancement).
 ![](figures/tuning_fivek.jpg)
-#### Dehazing Results
+#### 2. Dehazing Results
 Visualization results of ProRes on the RESIDE-6K dataset via prompt tuning for image dehazing (a new task).
 ![](figures/tuning_reside.jpg)
 
@@ -536,7 +579,7 @@ $ProRes/datasets/
 ```
 
 ### Training
-Under construction.
+comming soon!
 <!-- 
 You can set the training configuration in the `./lib/config/default.py`. (Including:  the loading of preliminary model,  loss,  data augmentation, optimizer, warm-up and cosine annealing, auto-anchor, training epochs, batch_size).
 
@@ -557,7 +600,7 @@ python -m torch.distributed.launch --nproc_per_node=N tools/train.py  # N: the n
 
 
 ### Evaluation
-Under construction.
+comming soon!
 <!-- You can set the evaluation configuration in the `./lib/config/default.py`.
 
 Start evaluating:
@@ -572,11 +615,13 @@ python tools/test.py --weights weights/End-to-end.pth
 If you find our paper and code useful for your research, please consider giving a star :star:   and citation :pencil: :
 
 ```BibTeX
-@article{blank
+@article{
+      title={ProRes:Exploring Degradation-aware Visual Prompt for Universal Image Restoration}, 
+      author={Jiaqi Ma and Tianheng Cheng and Guoli Wang and Xinggang Wang and Qian Zhang and Lefei Zhang},
+      journal={arXiv preprint arXiv:2306.xxxxx},
+      year={2023}
 }
 ```
 
 ## Acknowledgement
-This project is based on [MAE](https://github.com/facebookresearch/mae), [BEiT](https://github.com/microsoft/unilm/tree/master/beit), [MIRNet](https://github.com/swz30/MIRNet), [MPRNet](https://github.com/swz30/MPRNet), [Uformer](https://github.com/ZhendongWang6/Uformer) and [Painter](https://github.com/baaivision/Painter/tree/main/Painter).
-
-Thanks for their wonderful works!
+This project is based on [MAE](https://github.com/facebookresearch/mae), [BEiT](https://github.com/microsoft/unilm/tree/master/beit), [MIRNet](https://github.com/swz30/MIRNet), [MPRNet](https://github.com/swz30/MPRNet), [Uformer](https://github.com/ZhendongWang6/Uformer) and [Painter](https://github.com/baaivision/Painter/tree/main/Painter). Thanks for their wonderful works!
