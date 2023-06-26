@@ -4,10 +4,10 @@
 
 [Jiaqi Ma](https://scholar.google.com/citations?user=BJUlpoMAAAAJ)<sup>1,✢</sup>,
 [Tianheng Cheng](https://scholar.google.com/citations?user=PH8rJHYAAAAJ)<sup>2,✢</sup>
-[Guoli Wang](https://scholar.google.com/citations?user=z-25fk0AAAAJ&hl=zh-CN)<sup>3</sup>
-[Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=zh-CN)<sup>2</sup>, 
-[Qian Zhang](https://scholar.google.com/citations?user=pCY-bikAAAAJ&hl=zh-CN)<sup>3</sup>,
-[Lefei Zhang](https://cs.whu.edu.cn/info/1019/2889.htm)<sup>1,📧</sup>
+[Guoli Wang](https://scholar.google.com/citations?user=z-25fk0AAAAJ)<sup>3</sup>
+[Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ)<sup>2</sup>, 
+[Qian Zhang](https://scholar.google.com/citations?user=pCY-bikAAAAJ)<sup>3</sup>,
+[Lefei Zhang](https://scholar.google.com/citations?user=BLKHwNwAAAAJ)<sup>1,📧</sup>
 
 <sup>1</sup>School of Computer Science, Wuhan University\
 <sup>2</sup> School of EIC, Huazhong University of Science & Technology\
@@ -16,7 +16,7 @@
 (✢) Equal contribution.
 (📧) corresponding author.
 
-[![arXiv paper](https://img.shields.io/badge/arXiv-2306.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2306.xxxxx)
+[![arXiv paper](https://img.shields.io/badge/arXiv-2306.13653-b31b1b.svg)](https://arxiv.org/abs/2306.13653)
 
 </div>
 
@@ -43,7 +43,7 @@
 ## Updates
 This project is under active development, please stay tuned! ☕
 
-**June 26, 2023:** We've released the [arXiv paper]() of ProRes! Code & models are coming soon!
+**June 26, 2023:** We've released the [arXiv paper](https://arxiv.org/abs/2306.13653) of ProRes! Code & models are coming soon!
 
 ## Introduction
 
@@ -620,7 +620,7 @@ If you find our paper and code useful for your research, please consider giving 
 @article{
       title={ProRes: Exploring Degradation-aware Visual Prompt for Universal Image Restoration}, 
       author={Jiaqi Ma and Tianheng Cheng and Guoli Wang and Xinggang Wang and Qian Zhang and Lefei Zhang},
-      journal={arXiv preprint arXiv:2306.xxxxx},
+      journal={arXiv preprint arXiv:2306.13653},
       year={2023}
 }
 ```
