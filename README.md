@@ -37,6 +37,10 @@
 <!-- ### The Illustration of ProRes
 ![](figures/intro_figure.jpg) -->
 
+<!-- <p align="center">
+  <img src="./figures/prores.jpg" alt="image" style="width:500px;">
+</p> -->
+
 ## Updates
 This project is under active development, please stay tuned! ☕
 
@@ -68,6 +72,15 @@ This project is under active development, please stay tuned! ☕
     ```bash
     pip install -r requirements.txt
     ```
+
+### Other Dependencies
+Install [detectron2](https://github.com/facebookresearch/detectron2), following the instructions in [here](https://detectron2.readthedocs.io/en/latest/tutorials/install.html). 
+Or simply use the following command.
+```bash
+cd ProRes/
+git clone https://github.com/facebookresearch/detectron2
+python -m pip install -e detectron2
+```
 
 ### Data Preparation
 #### Download Path
