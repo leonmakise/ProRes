@@ -20,9 +20,6 @@
 
 </div>
 
-
-
-
 <!-- <div align="left">   
 
 ## ProRes: Exploring Degradation-aware Visual **Pro**mpt for Universal Image **Res**toration 
@@ -43,19 +40,15 @@
 ## Updates
 This project is under active development, please stay tuned! ☕
 
-**June 26, 2023:** We've released the [arXiv paper](https://arxiv.org/abs/2306.13653) of ProRes! Code & models are coming soon!
+**Sep 29, 2024:** Code & models of ProRes are released, and some minor issues have been fixed. We will update the arXiv version with more details upon acceptance.
 
-## Introduction
+**Aug 28, 2024:** Our newest paper [Perceive-IR](https://arxiv.org/abs/2408.15994) is on arXiv and under peer review! Perceive-IR performs well under two all-in-one settings.
 
+**Jun 26, 2023:** We've released [ProRes](https://arxiv.org/abs/2306.13653)! We wish this work would inspire more works on prompt learning with image restoration tasks. Code & models are coming soon!
+
+
+## Highlights
 ![](figures/main_figure.jpg)
-
-Image restoration aims to reconstruct degraded images, e.g., denoising or deblurring. Existing works focus on designing task-specific methods and there are inadequate attempts at universal methods.
-However, simply unifying multiple tasks into one universal architecture suffers from uncontrollable and undesired predictions. To address those issues, we explore prompt learning in universal architectures for image restoration tasks.
-
-In this paper, we present **Degradation-aware Visual Prompts**, which encode various types of image degradation, e.g., noise and blur, into unified visual prompts. These degradation-aware prompts provide control over image processing and allow weighted combinations for customized image restoration. We then leverage degradation-aware visual **Pro**mpts to establish a controllable and universal model for image **Res**toration, called **ProRes**, which is applicable to an extensive range of image restoration tasks. ProRes leverages the vanilla Vision Transformer (ViT) without any task-specific designs. Furthermore, the pre-trained ProRes can easily adapt to new tasks through efficient prompt tuning with only a few images. Without bells and whistles, ProRes achieves competitive performance compared to task-specific methods and experiments can demonstrate its ability for controllable restoration and adaptation for new tasks.
-
-
-### Highlights
 
 * ProRes addresses universal image restoration with degradation-aware prompts, which is the first prompt-based versatile framework for image restoration.
 
@@ -65,6 +58,120 @@ In this paper, we present **Degradation-aware Visual Prompts**, which encode var
 
 * Specific prompts can control the output of ProRes. Moreover, combining different prompts can tackle the images with multiple corruptions.
 
+## Getting Started
+
+### Requirement
+* Linux, CUDA>=9.2, GCC>=5.4
+* PyTorch >= 1.8.1
+* MATLAB for evaluation
+* Other requirements
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### Data Preparation
+#### Download Path
+- Download the denoising dataset from [SIDD](https://www.eecs.yorku.ca/~kamel/sidd/).
+- Download the low-light enhancement dataset from [LoL](https://daooshee.github.io/BMVC2018website/). 
+- Download the deraining dataset from [Synthetic Rain Datasets](https://github.com/swz30/MPRNet/blob/main/Deraining/Datasets/README.md). 
+- Download the deblurring dataset from [Synthetic Blur Datasets](https://github.com/swz30/MPRNet/blob/main/Deblurring/Datasets/README.md). 
+
+#### Preprocess Data
+Run the following commands to generate corresponding JSON files for each dataset.
+
+```bash
+#denoising
+python data/sidd/gen_json_sidd.py --split train
+python data/sidd/gen_json_sidd.py --split val
+
+# low-light enhancement
+python data/lol/gen_json_lol.py --split train
+python data/lol/gen_json_lol.py --split val
+
+# deraining
+python data/derain/gen_json_rain.py --split train
+python data/derain/gen_json_rain.py --split val
+
+# derblurring
+python data/derain/gen_json_blur.py --split train
+python data/derain/gen_json_blur.py --split val
+```
+
+#### Dataset Structure
+We recommend the dataset directory structure to be the following:
+
+```bash
+$ProRes/datasets/
+    denoise/
+        train/
+        val/
+    enhance/
+        our485/
+            low/
+            high/
+        eval15/
+            low/
+            high/
+    derain/
+        train/
+            input/
+            target/
+        test/
+            Rain100H/
+            Rain100L/
+            Test100/
+            Test1200/
+            Test2800/
+    deblur/
+        train/
+            input/
+            target/
+        test/
+            GoPro/
+            HIDE/
+            RealBlur_J/
+            RealBlur_R/
+    json/
+        train_denoise.json
+        val_denoise.json
+        train_enhance.json
+        val_enhance.json
+        train_derain.json
+        val_derain.json
+        train_deblur.json
+        val_deblur.json
+```
+
+### Training
+coming soon!
+<!-- 
+You can set the training configuration in the `./lib/config/default.py`. (Including the loading of the preliminary model,  loss,  data augmentation, optimizer, warm-up and cosine annealing, auto-anchor, training epochs, batch_size).
+
+If you want to try alternating optimization or train the model for a single task, please modify the corresponding configuration in `./lib/config/default.py` to `True`. (As follows, all configurations are `False`, which means training multiple tasks end to end).
+
+```python
+```
+
+Start training:
+
+```shell
+python tools/train.py
+```
+Multi GPU mode:
+```shell
+python -m torch.distributed.launch --nproc_per_node=N tools/train.py  # N: the number of GPUs
+``` -->
+
+
+### Evaluation
+coming soon!
+<!-- You can set the evaluation configuration in the `./lib/config/default.py`.
+
+Start evaluating:
+
+```shell
+python tools/test.py --weights weights/End-to-end.pth
+``` -->
 
 ## Experimental Results
 <!-- [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/yolop-you-only-look-once-for-panoptic-driving/traffic-object-detection-on-bdd100k)](https://paperswithcode.com/sota/traffic-object-detection-on-bdd100k?p=yolop-you-only-look-once-for-panoptic-driving) -->
@@ -195,7 +302,7 @@ In this paper, we present **Degradation-aware Visual Prompts**, which encode var
 </table>
 
 **Notes**: 
-- The works we has use for reference including `Uformer`([paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Wang_Uformer_A_General_U-Shaped_Transformer_for_Image_Restoration_CVPR_2022_paper.pdf),[code](https://github.com/ZhendongWang6/Uformer)), `MPRNet`([paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Zamir_Multi-Stage_Progressive_Image_Restoration_CVPR_2021_paper.pdf),[code](https://github.com/swz30/MPRNet)), `MIRNet-v2`([paper](https://www.waqaszamir.com/publication/zamir-2022-mirnetv2/),[code](https://github.com/swz30/MIRNetv2)), `Restormer`([paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Zamir_Restormer_Efficient_Transformer_for_High-Resolution_Image_Restoration_CVPR_2022_paper.pdf),[code](https://github.com/swz30/Restormer)), `MAXIM`([paper](https://openaccess.thecvf.com//content/CVPR2022/papers/Tu_MAXIM_Multi-Axis_MLP_for_Image_Processing_CVPR_2022_paper.pdf),[code](https://github.com/google-research/maxim)) and `Painter`([paper](https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Images_Speak_in_Images_A_Generalist_Painter_for_In-Context_Visual_CVPR_2023_paper.pdf),[code](https://github.com/baaivision/Painter)).
+- The works we used for reference including `Uformer`([paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Wang_Uformer_A_General_U-Shaped_Transformer_for_Image_Restoration_CVPR_2022_paper.pdf),[code](https://github.com/ZhendongWang6/Uformer)), `MPRNet`([paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Zamir_Multi-Stage_Progressive_Image_Restoration_CVPR_2021_paper.pdf),[code](https://github.com/swz30/MPRNet)), `MIRNet-v2`([paper](https://www.waqaszamir.com/publication/zamir-2022-mirnetv2/),[code](https://github.com/swz30/MIRNetv2)), `Restormer`([paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Zamir_Restormer_Efficient_Transformer_for_High-Resolution_Image_Restoration_CVPR_2022_paper.pdf),[code](https://github.com/swz30/Restormer)), `MAXIM`([paper](https://openaccess.thecvf.com//content/CVPR2022/papers/Tu_MAXIM_Multi-Axis_MLP_for_Image_Processing_CVPR_2022_paper.pdf),[code](https://github.com/google-research/maxim)) and `Painter`([paper](https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Images_Speak_in_Images_A_Generalist_Painter_for_In-Context_Visual_CVPR_2023_paper.pdf),[code](https://github.com/baaivision/Painter)).
 - For both Painter and ProRes, we adopt ViT-Large with MAE pre-trained weights.
 - More experimental results are listed in the paper!
 ---
@@ -451,165 +558,6 @@ Visualization results of ProRes on the FiveK dataset. We adopt two settings, i.e
 Visualization results of ProRes on the RESIDE-6K dataset via prompt tuning for image dehazing (a new task).
 ![](figures/tuning_reside.jpg)
 
-## Getting Started
-
-### Project Structure
-coming soon!
-<!-- 
-```python
-├─inference
-│ ├─images   # inference images
-│ ├─output   # inference result
-├─lib
-│ ├─config/default   # configuration of training and validation
-│ ├─core    
-│ │ ├─activations.py   # activation function
-│ │ ├─evaluate.py   # calculation of metric
-│ │ ├─function.py   # training and validation of model
-│ │ ├─general.py   #calculation of metric、nms、conversion of data-format、visualization
-│ │ ├─loss.py   # loss function
-│ │ ├─postprocess.py   # postprocess(refine da-seg and ll-seg, unrelated to paper)
-│ ├─dataset
-│ │ ├─AutoDriveDataset.py   # Superclass dataset，general function
-│ │ ├─bdd.py   # Subclass dataset，specific function
-│ │ ├─hust.py   # Subclass dataset(Campus scene, unrelated to paper)
-│ │ ├─convect.py 
-│ │ ├─DemoDataset.py   # demo dataset(image, video and stream)
-│ ├─models
-│ │ ├─YOLOP.py    # Setup and Configuration of model
-│ │ ├─light.py    # Model lightweight（unrelated to paper, zwt)
-│ │ ├─commom.py   # calculation module
-│ ├─utils
-│ │ ├─augmentations.py    # data augumentation
-│ │ ├─autoanchor.py   # auto anchor(k-means)
-│ │ ├─split_dataset.py  # (Campus scene, unrelated to paper)
-│ │ ├─utils.py  # logging、device_select、time_measure、optimizer_select、model_save&initialize 、Distributed training
-│ ├─run
-│ │ ├─dataset/training time  # Visualization, logging and model_save
-├─tools
-│ │ ├─demo.py    # demo(folder、camera)
-│ │ ├─test.py    
-│ │ ├─train.py    
-├─toolkits
-│ │ ├─deploy    # Deployment of model
-│ │ ├─datapre    # Generation of gt(mask) for drivable area segmentation task
-├─weights    # Pretraining model
-``` -->
-
----
-
-### Requirement
-* Linux, CUDA>=9.2, GCC>=5.4
-* PyTorch >= 1.8.1
-* MATLAB for evaluation
-* Other requirements
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-### Data Preparation
-#### Download Path
-- Download the denoising dataset from [SIDD](https://www.eecs.yorku.ca/~kamel/sidd/).
-- Download the low-light enhancement dataset from [LoL](https://daooshee.github.io/BMVC2018website/). 
-- Download the deraining dataset from [Synthetic Rain Datasets](https://github.com/swz30/MPRNet/blob/main/Deraining/Datasets/README.md). 
-- Download the deblurring dataset from [Synthetic Blur Datasets](https://github.com/swz30/MPRNet/blob/main/Deblurring/Datasets/README.md). 
-
-#### Preprocess Data
-Run the following commands to generate corresponding JSON files for each dataset.
-
-```bash
-#denoising
-python data/sidd/gen_json_sidd.py --split train
-python data/sidd/gen_json_sidd.py --split val
-
-# low-light enhancement
-python data/lol/gen_json_lol.py --split train
-python data/lol/gen_json_lol.py --split val
-
-# deraining
-python data/derain/gen_json_rain.py --split train
-python data/derain/gen_json_rain.py --split val
-
-# derblurring
-python data/derain/gen_json_blur.py --split train
-python data/derain/gen_json_blur.py --split val
-```
-
-#### Dataset Structure
-We recommend the dataset directory structure to be the following:
-
-```bash
-$ProRes/datasets/
-    denoise/
-        train/
-        val/
-    enhance/
-        our485/
-            low/
-            high/
-        eval15/
-            low/
-            high/
-    derain/
-        train/
-            input/
-            target/
-        test/
-            Rain100H/
-            Rain100L/
-            Test100/
-            Test1200/
-            Test2800/
-    deblur/
-        train/
-            input/
-            target/
-        test/
-            GoPro/
-            HIDE/
-            RealBlur_J/
-            RealBlur_R/
-    json/
-        train_denoise.json
-        val_denoise.json
-        train_enhance.json
-        val_enhance.json
-        train_derain.json
-        val_derain.json
-        train_deblur.json
-        val_deblur.json
-```
-
-### Training
-coming soon!
-<!-- 
-You can set the training configuration in the `./lib/config/default.py`. (Including the loading of the preliminary model,  loss,  data augmentation, optimizer, warm-up and cosine annealing, auto-anchor, training epochs, batch_size).
-
-If you want to try alternating optimization or train the model for a single task, please modify the corresponding configuration in `./lib/config/default.py` to `True`. (As follows, all configurations are `False`, which means training multiple tasks end to end).
-
-```python
-```
-
-Start training:
-
-```shell
-python tools/train.py
-```
-Multi GPU mode:
-```shell
-python -m torch.distributed.launch --nproc_per_node=N tools/train.py  # N: the number of GPUs
-``` -->
-
-
-### Evaluation
-coming soon!
-<!-- You can set the evaluation configuration in the `./lib/config/default.py`.
-
-Start evaluating:
-
-```shell
-python tools/test.py --weights weights/End-to-end.pth
-``` -->
 
 
 ## Citation
