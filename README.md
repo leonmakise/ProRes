@@ -68,10 +68,7 @@ This project is under active development, please stay tuned! ☕
 * Linux, CUDA>=9.2, GCC>=5.4
 * PyTorch >= 1.8.1
 * MATLAB for evaluation
-* Other requirements
-    ```bash
-    pip install -r requirements.txt
-    ```
+
 
 ### Other Dependencies
 Install [detectron2](https://github.com/facebookresearch/detectron2), following the instructions in [here](https://detectron2.readthedocs.io/en/latest/tutorials/install.html). 
@@ -144,47 +141,35 @@ $ProRes/datasets/
             HIDE/
             RealBlur_J/
             RealBlur_R/
-    json/
-        train_denoise.json
-        val_denoise.json
-        train_enhance.json
-        val_enhance.json
-        train_derain.json
-        val_derain.json
-        train_deblur.json
-        val_deblur.json
+
+    target-derain_train.json
+    gt-enhance_lol_train.json
+    groundtruth-denoise_ssid_train448.json
+    groundtruth_crop-deblur_gopro_train.json
+    
+    target-derain_test_rain100h.json
+    gt-enhance_lol_eval.json
+    groundtruth-denoise_ssid_val256.json
+    groundtruth-deblur_gopro_val.json
 ```
 
 ### Training
-coming soon!
-<!-- 
-You can set the training configuration in the `./lib/config/default.py`. (Including the loading of the preliminary model,  loss,  data augmentation, optimizer, warm-up and cosine annealing, auto-anchor, training epochs, batch_size).
-
-If you want to try alternating optimization or train the model for a single task, please modify the corresponding configuration in `./lib/config/default.py` to `True`. (As follows, all configurations are `False`, which means training multiple tasks end to end).
-
-```python
-```
-
-Start training:
+Download pre-trained [MAE ViT-Large model](https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_large.pth) and put it in the folder `./ProRes/pretrained_weights/`.
 
 ```shell
-python tools/train.py
+sh scripts/train.sh
 ```
-Multi GPU mode:
-```shell
-python -m torch.distributed.launch --nproc_per_node=N tools/train.py  # N: the number of GPUs
-``` -->
+
 
 
 ### Evaluation
-coming soon!
-<!-- You can set the evaluation configuration in the `./lib/config/default.py`.
+Download the [pretrained model](https://drive.google.com/file/d/1P-MGgYtXJR214rBCD_LNZYrfQwDbSWGJ/view?usp=sharing) and put it in the folder `./ProRes/models/prores_vitl_pretrained_sl1_mprnetprompt_add/`.
 
-Start evaluating:
-
+Run the following command:
 ```shell
-python tools/test.py --weights weights/End-to-end.pth
-``` -->
+sh eval_ours.sh
+```
+
 
 ## Experimental Results
 <!-- [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/yolop-you-only-look-once-for-panoptic-driving/traffic-object-detection-on-bdd100k)](https://paperswithcode.com/sota/traffic-object-detection-on-bdd100k?p=yolop-you-only-look-once-for-panoptic-driving) -->
