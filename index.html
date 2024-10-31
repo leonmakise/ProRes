@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <style>
+    .carousel .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      width: 100%;
+      max-width: 2600px; /* 可以根据需要调整最大宽度 */
+    }
+  
+    .carousel img {
+      width: 100%;
+      height: auto;
+      max-height: 600px; /* 设置一个合理的最大高度 */
+      object-fit: contain;
+      aspect-ratio: 4 / 3; /* 设置图片的宽高比，这里以4:3为例 */
+    }
+  </style>
+
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
@@ -24,8 +44,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <title>ProRes: Exploring Degradation-aware Visual Prompt for Universal Image Restoration</title>
+  <link rel="icon" type="image/x-icon" href="static\images\icon.jpg">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -52,38 +72,47 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">🌆 <b>ProRes:</b> Exploring Degradation-aware Visual <strong>Pro</strong>mpt for Universal Image <strong>Res</strong>toration</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://leonmakise.github.io/" target="_blank">Jiaqi Ma</a><sup>1,✢</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://github.com/wondervictor" target="_blank">Tianheng Cheng</a><sup>2,✢</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="https://scholar.google.com/citations?user=z-25fk0AAAAJ" target="_blank">Guoli Wang</a><sup>3</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=qNCTLV0AAAAJ" target="_blank">Xinggang Wang</a><sup>2</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=pCY-bikAAAAJ" target="_blank">Qian Zhang</a><sup>3</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=BLKHwNwAAAAJ" target="_blank">Lefei Zhang</a><sup>1,📧</sup>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">Wuhan University<br>Huazhong University of Science & Technology<br>Horizon Robotics<br><b>Under Peer Review</b></span>
+                    <span class="eql-cntrb"><small><br><sup>✢</sup>: Equal Contribution</small>, <small><sup>📧</sup>: Corresponding Author</small></span>
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                      <!-- <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2306.13653" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
                         </span>
                         <span>Paper</span>
                       </a>
-                    </span>
+                    </span> -->
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
+                    <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -91,11 +120,11 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/leonmakise/ProRes" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -106,7 +135,7 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://arxiv.org/pdf/2306.13653" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -126,15 +155,19 @@
 <!-- Teaser video-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
+    <h2 class="title is-3">All-in-one Image Restoration</h2>
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
         <source src="static/videos/banner_video.mp4"
         type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
+      </video> -->
+      <div class="item">
+        <!-- Your image here -->
+        <img src="figures\intro_figure.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+        Conceptual comparison with previous approaches.
+        </h2>
+      </div>
     </div>
   </div>
 </section>
@@ -148,7 +181,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Image restoration aims to reconstruct degraded images, e.g., denoising or deblurring. Existing works focus on designing task-specific methods and there are inadequate attempts at universal methods. However, simply unifying multiple tasks into one universal architecture suffers from uncontrollable and undesired predictions. To address those issues, we explore prompt learning in universal architectures for image restoration tasks. In this paper, we present Degradation-aware Visual Prompts, which encode various types of image degradation, e.g., noise and blur, into unified visual prompts. These degradation-aware prompts provide control over image processing and allow weighted combinations for customized image restoration. We then leverage degradation-aware visual prompts to establish a controllable and universal model for image restoration, called ProRes, which is applicable to an extensive range of image restoration tasks. ProRes leverages the vanilla Vision Transformer (ViT) without any task-specific designs. Furthermore, the pre-trained ProRes can easily adapt to new tasks through efficient prompt tuning with only a few images. Without bells and whistles, ProRes achieves competitive performance compared to task-specific methods and experiments can demonstrate its ability for controllable restoration and adaptation for new tasks.
           </p>
         </div>
       </div>
@@ -158,39 +191,87 @@
 <!-- End paper abstract -->
 
 
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Overall Pipeline of ProRes</h2>
+    <div class="hero-body">
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video> -->
+      <div class="item">
+        <!-- Your image here -->
+        <img src="figures\main_figure.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-lefted">
+        <b>(a) Training ProRes:</b> we add the target visual prompt to the input image and flatten the prompted image into patches. We leverage a vision transformer, i.e., ViT-Large, as the image encoder and adopt a simple pixel decoder to generate the restored image. Then we adopt pixel loss to optimize ProRes. <br>
+        <b>(b) Prompt Tuning:</b> we freeze the weights of ProRes and randomly initialize the learnable prompts for new tasks or new datasets.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Image carousel -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Control Ability</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <h3 class="title is-4">Independent Control</h3>
+        <!-- Your image here -->
+        <img src="figures/S1_independent.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Visualization results processed from images of different corruptions. Compared with the original inputs, the outputs are consistent with the given visual prompts.
+        </h2>
+      </div>
+      <div class="item">
+        <h3 class="title is-4">Sensitive to Irrelevant Task-specific Prompts</h3>
+        <!-- Your image here -->
+        <img src="figures/S2_irrelevant.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Visualization results processed by different prompts. Compared with the original inputs, the outputs remain unchanged with irrelevant visual prompts.
+        </h2>
+      </div>
+      <div class="item">
+        <h3 class="title is-4">Tackle Complicated Corruptions</h3>
+        <!-- Your image here -->
+        <img src="figures/S3_combine.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Visualization results processed by ProRes from images of mixed types of degradation, i.e., low-light and rainy. ProRes adopts two visual prompts for low-light enhancement (E) and deraining (D) and combines the two visual prompts by linear weighted sum, i.e., αD + (1 − α)E, to control the restoration process.
+       </h2>
+     </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
 <!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
+      <h2 class="title is-3">Adaptation on New Datasets & Task</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
+        <h3 class="title is-4">Low-light Enhancement Results</h3>
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <img src="figures/tuning_fivek.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          Visualization results of ProRes on the FiveK dataset. We adopt two settings, i.e., direct inference and prompt tuning, to evaluate ProRes on the FiveK dataset (a new dataset for low-light enhancement).
         </h2>
       </div>
       <div class="item">
+        <h3 class="title is-4">Dehazing Results</h3>
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <img src="figures/tuning_reside.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
+          Visualization results of ProRes on the RESIDE-6K dataset via prompt tuning for image dehazing (a new task).
         </h2>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
   </div>
 </div>
 </div>
@@ -198,52 +279,26 @@
 <!-- End image carousel -->
 
 
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
 <!-- Video carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Another Carousel</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
             <source src="static/videos/carousel1.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
           <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
             <source src="static/videos/carousel2.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
           <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
             <source src="static/videos/carousel3.mp4"
             type="video/mp4">
           </video>
@@ -251,7 +306,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End video carousel -->
 
 
@@ -260,7 +315,7 @@
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -270,7 +325,7 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
@@ -278,7 +333,12 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@article{ma2023prores,
+        title={Prores: Exploring degradation-aware visual prompt for universal image restoration},
+        author={Ma, Jiaqi and Cheng, Tianheng and Wang, Guoli and Zhang, Qian and Wang, Xinggang and Zhang, Lefei},
+        journal={arXiv preprint arXiv:2306.13653},
+        year={2023}
+      }</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
@@ -291,9 +351,10 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
+            <br> Our code is based on <a href="https://github.com/facebookresearch/mae" target="_blank">MAE</a>, <a href="https://github.com/microsoft/unilm/tree/master/beit" target="_blank">BEiT</a>, <a href="https://github.com/swz30/MIRNet" target="_blank">MIRNet</a>, <a href="https://github.com/swz30/MPRNet" target="_blank">MPRNet</a>, <a href="https://github.com/ZhendongWang6/Uformer" target="_blank">Uformer</a> and <a href="https://github.com/baaivision/Painter/tree/main/Painter" target="_blank">Painter</a>. Thanks for their wonderful work!
           </p>
 
         </div>
@@ -304,9 +365,21 @@
 
 <!-- Statcounter tracking code -->
   
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
+<!-- Default Statcounter code for ProRes https://leonmakise.github.io/ProRes/
+-->
+<script type="text/javascript">
+  var sc_project=13053152; 
+  var sc_invisible=0; 
+  var sc_security="d7d297c9"; 
+  var scJsHost = "https://";
+  document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
+  "statcounter.com/counter/counter.js'></"+"script>");
+  </script>
+  <noscript><div class="statcounter"><a title="real time web analytics"
+  href="https://statcounter.com/" target="_blank"><img class="statcounter"
+  src="https://c.statcounter.com/13053152/0/d7d297c9/0/" alt="real time web
+  analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+  <!-- End of Statcounter Code -->
 
   </body>
   </html>
